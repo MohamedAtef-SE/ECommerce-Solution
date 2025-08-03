@@ -1,7 +1,3 @@
-
-using Ecommerce.DL;
-using ECommerce.PL.Entites;
-
 namespace ECommerce.PL
 {
     public class Program
