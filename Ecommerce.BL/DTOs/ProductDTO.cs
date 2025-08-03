@@ -1,25 +1,24 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ECommerce.DL.Entites;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace ECommerce.DL.Entites
+namespace Ecommerce.BL.DTOs
 {
-    // How to Configure The Models to be Tables in DB in transformation way using ORM EF Core ?
-    // 01. By Convension.
-    public class Product
+    public class ProductDTO
     {
         public int Id { get; set; }
         public string ProuductName { get; set; } = null!;
         public decimal Price { get; set; }
         public string? Description { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public DateTime? LastModifiedDate { get; set; }
-        public int? SeUserId { get; set; }
-
+        
         // Foreign Key
         public int? CategoryId { get; set; }
-        
+
         // Navigational Property
         public Category? Category { get; set; } = new Category();
-
         public int BrandId { get; set; }
         public Brand Brand { get; set; }
     }
