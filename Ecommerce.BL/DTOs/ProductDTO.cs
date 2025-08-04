@@ -13,13 +13,9 @@ namespace Ecommerce.BL.DTOs
         public string ProuductName { get; set; } = null!;
         public decimal Price { get; set; }
         public string? Description { get; set; }
-        
-        // Foreign Key
+ 
         public int? CategoryId { get; set; }
 
-        // Navigational Property
-        public Category? Category { get; set; } = new Category();
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
     }
 }
