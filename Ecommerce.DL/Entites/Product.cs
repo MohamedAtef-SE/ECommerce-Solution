@@ -18,9 +18,9 @@ namespace ECommerce.DL.Entites
         public int? CategoryId { get; set; }
         
         // Navigational Property
-        public Category? Category { get; set; } = new Category();
+        public Category? Category { get; set; }
 
-        public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+        public int? BrandId { get; set; }
+        public Brand? Brand { get; set; }
     }
 }

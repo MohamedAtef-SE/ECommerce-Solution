@@ -1,5 +1,6 @@
 ﻿using Ecommerce.DL.Contracts;
 using ECommerce.DL.Entites;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,25 @@ namespace Ecommerce.DL.Repositories
             var products = _dbContext.Products.ToList();
             return products;
 
+        }
+
+        public Product GetProductById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<int> AddProductAsync(Product product)
+        {
+            var  result  = await _dbContext.Products.AddAsync(product);
+
+            if (result.State == EntityState.Added)
+            {
+                var numberOfEffectedRows = await _dbContext.SaveChangesAsync();
+
+                return numberOfEffectedRows;
+            }
+            return 0;
+         
         }
     }
 }
